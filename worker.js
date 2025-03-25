@@ -1,4 +1,13 @@
-// 定义 KV 命名空间
+// 添加这段代码
+if (request.method === "OPTIONS") {
+  return new Response(null, {
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET,POST,OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type"
+    }
+  });
+}// 定义 KV 命名空间
 const FORUM_POSTS = "forum_posts";
 const ANNOUNCEMENT = "announcement";
 const SUBMISSIONS = "submissions";
